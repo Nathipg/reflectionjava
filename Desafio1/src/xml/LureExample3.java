@@ -1,3 +1,6 @@
+package xml;
+
+import xml.AdvancedLure;
 import java.io.File;
 
 import org.simpleframework.xml.Serializer;

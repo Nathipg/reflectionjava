@@ -1,3 +1,6 @@
+package xml;
+
+import xml.AdvancedLure;
 import java.util.List;
 
 import org.simpleframework.xml.Attribute;
