@@ -1,5 +1,7 @@
 package classes;
 
+import org.simpleframework.xml.*;
+
 /**
  *
  * @author nathipg e laionel lellis
