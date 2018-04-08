@@ -19,9 +19,9 @@ public class DesenhoAnimado {
     @Element
     private String faixaEtaria;
     @Element
-    private String anoLancamento;
+    private int anoLancamento;
     @Element
-    private int numeroTemporadas;
+    private int arcos;
     @Element
     private int totalEpisodios;
     @Element
@@ -60,20 +60,20 @@ public class DesenhoAnimado {
         this.faixaEtaria = faixaEtaria;
     }
 
-    public String getAnoLancamento() {
+    public int getAnoLancamento() {
         return anoLancamento;
     }
 
-    public void setAnoLancamento(String anoLancamento) {
+    public void setAnoLancamento(int anoLancamento) {
         this.anoLancamento = anoLancamento;
     }
 
-    public int getNumeroTemporadas() {
-        return numeroTemporadas;
+    public int getArcos() {
+        return arcos;
     }
 
-    public void setNumeroTemporadas(int numeroTemporadas) {
-        this.numeroTemporadas = numeroTemporadas;
+    public void setArcos(int arcos) {
+        this.arcos = arcos;
     }
 
     public int getTotalEpisodios() {
