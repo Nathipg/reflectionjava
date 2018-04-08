@@ -10,13 +10,21 @@ import org.simpleframework.xml.*;
 
 @Root
 public class DesenhoAnimado {
+    @Attribute
     private int id;
+    @Element
     private String nome;
+    @Element
     private String genero;
+    @Element
     private String faixaEtaria;
+    @Element
     private String anoLancamento;
+    @Element
     private int numeroTemporadas;
+    @Element
     private int totalEpisodios;
+    @Element
     private String sinopse;
 
     //Getters 'n' Setters
