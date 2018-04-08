@@ -4,6 +4,9 @@ package classes;
  *
  * @author nathipg e laionel lellis
  */
+
+
+@Root
 public class DesenhoAnimado {
     private int id;
     private String nome;
