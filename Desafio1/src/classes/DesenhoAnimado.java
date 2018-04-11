@@ -1,5 +1,6 @@
 package classes;
 
+import anotacoes.*;
 import java.util.ArrayList;
 import org.simpleframework.xml.*;
 
@@ -8,7 +9,7 @@ import org.simpleframework.xml.*;
  * @author nathipg e laionel lellis
  */
 
-
+@Raiz
 @Root
 public class DesenhoAnimado {
     @Attribute
