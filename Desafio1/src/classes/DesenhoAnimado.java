@@ -1,5 +1,6 @@
 package classes;
 
+import java.util.ArrayList;
 import org.simpleframework.xml.*;
 
 /**
@@ -15,19 +16,12 @@ public class DesenhoAnimado {
     @Element
     private String nome;
     @Element
-    private String genero;
-    @Element
-    private String faixaEtaria;
-    @Element
-    private int anoLancamento;
-    @Element
-    private int arcos;
-    @Element
-    private int totalEpisodios;
-    @Element
     private String sinopse;
+    @ElementList
+    private ArrayList<Temporada> temporada;
 
     //Getters 'n' Setters
+
     public int getId() {
         return id;
     }
@@ -44,46 +38,6 @@ public class DesenhoAnimado {
         this.nome = nome;
     }
 
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
-    public String getFaixaEtaria() {
-        return faixaEtaria;
-    }
-
-    public void setFaixaEtaria(String faixaEtaria) {
-        this.faixaEtaria = faixaEtaria;
-    }
-
-    public int getAnoLancamento() {
-        return anoLancamento;
-    }
-
-    public void setAnoLancamento(int anoLancamento) {
-        this.anoLancamento = anoLancamento;
-    }
-
-    public int getArcos() {
-        return arcos;
-    }
-
-    public void setArcos(int arcos) {
-        this.arcos = arcos;
-    }
-
-    public int getTotalEpisodios() {
-        return totalEpisodios;
-    }
-
-    public void setTotalEpisodios(int totalEpisodios) {
-        this.totalEpisodios = totalEpisodios;
-    }
-
     public String getSinopse() {
         return sinopse;
     }
@@ -91,5 +45,13 @@ public class DesenhoAnimado {
     public void setSinopse(String sinopse) {
         this.sinopse = sinopse;
     }
-    
+
+    public ArrayList<Temporada> getTemporada() {
+        return temporada;
+    }
+
+    public void setTemporada(ArrayList<Temporada> temporada) {
+        this.temporada = temporada;
+    }
+
 }
