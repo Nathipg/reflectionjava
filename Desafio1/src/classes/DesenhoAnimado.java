@@ -8,15 +8,19 @@ import java.util.ArrayList;
  * @author nathipg e laionel lellis
  */
 
-@Raiz
+@Principal
 public class DesenhoAnimado {
-    //@Attribute
+    @Atributo
+    @NaoNulo
+    @ChavePrimaria
     private int id;
-    //@Element
+    @Tag
+    @NaoNulo
     private String nome;
-    //@Element
+    @Tag
     private String sinopse;
-    //@ElementList
+    @Tag
+    @ChaveEstrangeira
     private ArrayList<Temporada> temporada;
 
     public DesenhoAnimado() {
