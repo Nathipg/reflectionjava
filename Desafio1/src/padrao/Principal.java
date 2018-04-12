@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.lang.reflect.*;
 import xml.*;
 
+
 /**
  *
  * @author nathipg e laionel lellis
@@ -48,19 +49,18 @@ public class Principal {
             Field[] atributos = da.getClass().getDeclaredFields();
             
             for( Field atributo : atributos ) {
-                Annotation[] anotacoesAtributo = atributo.getDeclaredAnnotations();
-                
                 System.out.println("=== " + atributo.getName() + " ===");
-                for(Annotation anotacao : anotacoesAtributo){
-                    System.out.println(anotacao);
-                    
-                    if( "@anotacoes.Atributo()".equals( anotacao.toString() ) ) {
-                        String stringAtributo = "";
+                if( atributo.isAnnotationPresent( Atributo.class ) ) {
+                    Method methodGet = classeDa.getDeclaredMethod ("get" + atributo.getName()); // método sem parâmetros
+                    //System.out.println (methodGetY.invoke (obj));
+                    String stringAtributo = atributo.getName() + "=\"" + "" + "\"";
 
-                        conteudoXml = conteudoXml.replaceAll("::nomeClasse::", da.getClass().toString().replaceAll("class classes.", ""));
-                    }
+                    //conteudoXml = conteudoXml.replaceAll("::nomeClasse::", da.getClass().toString().replaceAll("class classes.", ""));
                 }
             }
+            
+            GravarXml gx = new GravarXml();
+            gx.gravar(da.getClass().toString().replaceAll("class classes.", ""), conteudoXml);
         } catch( Exception e ) {
             e.printStackTrace();
         }
