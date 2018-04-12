@@ -2,7 +2,6 @@ package classes;
 
 import anotacoes.*;
 import java.util.ArrayList;
-import org.simpleframework.xml.*;
 
 /**
  *
@@ -10,16 +9,19 @@ import org.simpleframework.xml.*;
  */
 
 @Raiz
-@Root
 public class DesenhoAnimado {
-    @Attribute
+    //@Attribute
     private int id;
-    @Element
+    //@Element
     private String nome;
-    @Element
+    //@Element
     private String sinopse;
-    @ElementList
+    //@ElementList
     private ArrayList<Temporada> temporada;
+
+    public DesenhoAnimado() {
+        this.temporada = new ArrayList<>();
+    }
 
     //Getters 'n' Setters
 
@@ -51,8 +53,8 @@ public class DesenhoAnimado {
         return temporada;
     }
 
-    public void setTemporada(ArrayList<Temporada> temporada) {
-        this.temporada = temporada;
+    public void addTemporada(Temporada temporada) {
+        this.temporada.add( temporada );
     }
 
 }

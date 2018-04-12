@@ -1,23 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package classes;
-
-import org.simpleframework.xml.*;
 
 /**
  *
- * @author Laionel
+ * @author nathipg e laionel lellis
  */
-@Root
+//@Root
 public class Temporada {
-    @Attribute
+    //@Attribute
     private int id;
-    @Element
+    //@Element
     private String arco;
-    @Element
+    //@Element
     private int numeroEpisodios;
 
     public int getId() {
