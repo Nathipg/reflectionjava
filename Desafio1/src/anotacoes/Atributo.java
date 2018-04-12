@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
  *
  * @author nathipg e laionel lellis
  */
-
+@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Atributo {
 
