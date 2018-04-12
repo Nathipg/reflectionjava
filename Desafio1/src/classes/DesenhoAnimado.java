@@ -7,9 +7,9 @@ import java.util.ArrayList;
  *
  * @author nathipg e laionel lellis
  */
-
 @Principal
 public class DesenhoAnimado {
+
     @Atributo
     @NaoNulo
     @ChavePrimaria
@@ -19,7 +19,6 @@ public class DesenhoAnimado {
     private String nome;
     @Tag
     private String sinopse;
-    @Tag
     @ChaveEstrangeira
     private ArrayList<Temporada> temporada;
 
@@ -28,7 +27,6 @@ public class DesenhoAnimado {
     }
 
     //Getters 'n' Setters
-
     public int getId() {
         return id;
     }
@@ -58,7 +56,7 @@ public class DesenhoAnimado {
     }
 
     public void addTemporada(Temporada temporada) {
-        this.temporada.add( temporada );
+        this.temporada.add(temporada);
     }
 
 }

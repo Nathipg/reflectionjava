@@ -1,16 +1,19 @@
 package classes;
 
+import anotacoes.*;
+
 /**
  *
  * @author nathipg e laionel lellis
  */
-//@Root
+@TagSecundaria
 public class Temporada {
-    //@Attribute
+
+    @Atributo
     private int id;
-    //@Element
+    @Tag
     private String arco;
-    //@Element
+    @Tag
     private int numeroEpisodios;
 
     public int getId() {
@@ -36,6 +39,5 @@ public class Temporada {
     public void setNumeroEpisodios(int numeroEpisodios) {
         this.numeroEpisodios = numeroEpisodios;
     }
-    
-    
+
 }
