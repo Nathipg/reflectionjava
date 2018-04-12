@@ -1,10 +1,12 @@
 package padrao;
 
 import classes.*;
+import anotacoes.*;
 import java.io.File;
 import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.lang.reflect.*;
+import xml.*;
 
 
 /**
@@ -12,12 +14,14 @@ import java.lang.reflect.*;
  * @author nathipg e laionel lellis
  */
 
-/*LEIA AQUI TUTORIAL TOP http://tutorials.jenkov.com/java-reflection/annotations.html*/
+/* LEIA AQUI TUTORIAL TOP http://tutorials.jenkov.com/java-reflection/annotations.html */
 public class Principal {
     public static void main(String[] args) {
         try {
             DesenhoAnimado da = new DesenhoAnimado();
             Temporada tp1 = new Temporada();
+            String ql = System.getProperty("line.separator");
+            String conteudoXml = "";
             
             tp1.setId(1);
             tp1.setArco("Arco1");
@@ -29,22 +33,39 @@ public class Principal {
             da.addTemporada( tp1 );
             
             Class classeDa = da.getClass();
-            Annotation[] annotations = classeDa.getAnnotations();
+            Annotation[] anotacoes = classeDa.getAnnotations();
             
-            for(Annotation annotation : annotations){
-                System.out.println(annotation);
+            for(Annotation anotacao : anotacoes){
+                if( "@anotacoes.Principal()".equals( anotacao.toString() ) ) {
+                    conteudoXml = "<::nomeClasse:: ::atributosPrincipal::>\r\n"
+                            + "    ::tagsPrincipal::\r\n"
+                            + "    ::listasPrincipal::\r\n"
+                            + "</::nomeClasse::>";
+                    
+                    conteudoXml = conteudoXml.replaceAll("::nomeClasse::", da.getClass().toString().replaceAll("class classes.", ""));
+                }
             }
             
             Field[] atributos = da.getClass().getDeclaredFields();
             
             for( Field atributo : atributos ) {
-                Annotation[] annotationsAtributo = atributo.getDeclaredAnnotations();
+                Annotation[] anotacoesAtributo = atributo.getDeclaredAnnotations();
                 
-                for(Annotation annotation : annotationsAtributo){
-                    System.out.println(annotation);
+                System.out.println("=== " + atributo.getName() + " ===");
+                for(Annotation anotacao : anotacoesAtributo){
+                    System.out.println(anotacao);
+                    
+                    if( "@anotacoes.Atributo()".equals( anotacao.toString() ) ) {
+                        String stringAtributo = "";
+
+                        conteudoXml = conteudoXml.replaceAll("::nomeClasse::", da.getClass().toString().replaceAll("class classes.", ""));
+                    }
                 }
             }
             
+            GravarXml teste = new GravarXml();
+            
+            teste.gravar( da.getClass().toString().replaceAll("class classes.", ""), conteudoXml );
        } catch (Exception e) {
             e.printStackTrace();
        }

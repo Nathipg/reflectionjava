@@ -12,6 +12,4 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Tag {
 
-    public String name() default "";
-
 }
